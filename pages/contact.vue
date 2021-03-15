@@ -3,7 +3,7 @@
     <h1 class="title">{{ $t('contact.title') }}</h1>
     <div class="description">{{ $t('contact.description') }}</div>
     <div class="contactDetail">
-      <form @submit.prevent="sendForm()" v-if="formVisible" novalidate>
+      <form @submit.prevent="sendForm()" v-if="formVisible">
         <div class="content-inputs">
           <vs-input required type="text" v-model="name" :placeholder="$t('login.username')" />
         </div>
