@@ -67,12 +67,13 @@ header .headerMenu a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  min-height: calc(100vh - 120px);
 }
 
 .container .pageWrap {
@@ -404,6 +405,16 @@ header .headerMenu a:hover {
 
 .mobileMenu li a.nuxt-link-exact-active {
   font-weight: 600;
+}
+
+footer {
+  float: left;
+  width: 100%;
+  font-size: 13px;
+  text-align: center;
+  padding: 20px 10px;
+  border-top: 1px solid #ddd;
+  height: 60px;
 }
 
 @media (max-width: 767px) {

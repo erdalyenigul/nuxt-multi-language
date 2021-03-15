@@ -18,7 +18,7 @@ header{float:left; width:100%; padding:20px; border-bottom:1px solid #222; displ
     }
   }
 }
-.container{float:left; width:100%; display:flex; align-items:center; justify-content:center;
+.container{float:left; width:100%; display:flex; align-items:flex-start; justify-content:center; min-height: calc(100vh - 120px);
   .pageWrap{width:100%; max-width:1100px; padding:30px;
     h1.title{float:left; width:100%; font-size:28px; font-weight:600; margin-bottom:20px;}
     .description{float:left; width:100%; font-size:16px;
@@ -82,6 +82,8 @@ header{float:left; width:100%; padding:20px; border-bottom:1px solid #222; displ
     }
   }
 }
+
+footer{float:left; width:100%; font-size:13px; text-align:center; padding:20px 10px; border-top: 1px solid #ddd; height:60px;}
 
 @media (max-width:767px) {
   .vs-navbar__item{display:none;}
