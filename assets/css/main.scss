@@ -61,7 +61,7 @@ header{float:left; width:100%; padding:20px; border-bottom:1px solid #222; displ
 }
 .contactDetail{float:left; width:100%; padding:50px 0;
   .content-inputs{float:left; width:100%; margin-bottom:50px;}
-  .msg{padding: 10px; border: 1px solid #f1f1f1; outline:none; width:500px;}
+  .msg{padding: 10px; border: 1px solid #f1f1f1; outline:none; max-width:500px; width:100%;}
   input{width:500px;}
   .dropdown{position: relative; width: 100%; max-width: 500px;}
   .dropdown-input, .dropdown-selected{width: 100%; padding: 10px 16px; border: 1px solid transparent; background: #edf2f7; line-height: 1.5em; outline: none; border-radius: 8px;}
