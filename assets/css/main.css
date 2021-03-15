@@ -1,0 +1,422 @@
+html {
+  scroll-behavior: smooth;
+}
+
+strong {
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::after, ::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif !important;
+  color: #222;
+}
+
+#app {
+  float: left;
+  width: 100%;
+}
+
+header {
+  float: left;
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid #222;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 60px;
+}
+
+header .headerMenu a {
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+header .headerMenu a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  float: left;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .pageWrap {
+  width: 100%;
+  max-width: 1100px;
+  padding: 30px;
+}
+
+.container .pageWrap h1.title {
+  float: left;
+  width: 100%;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.container .pageWrap .description {
+  float: left;
+  width: 100%;
+  font-size: 16px;
+}
+
+.container .pageWrap .description span {
+  float: left;
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.container .pageWrap .description p {
+  float: left;
+  width: 100%;
+  font-size: 13px;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+
+.vs-navbar {
+  height: 60px;
+}
+
+.vs-navbar-content {
+  background-color: #11263c;
+  border-radius: 0;
+}
+
+.vs-navbar__item {
+  padding: 0;
+  opacity: 1;
+}
+
+.vs-navbar__item a {
+  color: #fff;
+  padding: 5px 20px;
+}
+
+.vs-button--flat {
+  color: #fff;
+  padding: 2px 5px;
+}
+
+.vs-select__input {
+  width: 100px;
+}
+
+.vs-select__label {
+  color: #222;
+}
+
+.nuxt-link-exact-active {
+  background-color: #fff;
+  color: #222 !important;
+  border-radius: 5px;
+}
+
+.signIn {
+  float: left;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.signIn .vs-input-parent {
+  margin-bottom: 10px;
+}
+
+.signIn .vs-input-parent input {
+  float: left;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 10px;
+}
+
+.vs-select-content {
+  width: 100%;
+  max-width: 100%;
+}
+
+.selectLanguage {
+  outline: 0;
+  padding: 5px;
+  height: 35px;
+  border-radius: 5px;
+}
+
+.selectLanguageModalWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.selectLanguageModalWrap select {
+  margin-top: 20px;
+  outline: 0;
+  padding: 5px;
+}
+
+.vs-dialog__header {
+  color: #888;
+}
+
+.username {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+  background-color: #193554;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.username .name {
+  float: right;
+}
+
+.username svg {
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.logo {
+  float: left;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 10px;
+  width: 100px;
+}
+
+.logo a {
+  background: transparent;
+  color: #fff !important;
+}
+
+.userMenu {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  background-color: #f1f1f1;
+  min-width: 200px;
+  padding: 20px;
+  -webkit-box-shadow: 1px 1px 20px rgba(144, 144, 144, 0.2);
+          box-shadow: 1px 1px 20px rgba(144, 144, 144, 0.2);
+  border-radius: 5px;
+}
+
+.userMenu span {
+  float: left;
+  width: 100%;
+  color: #222;
+  padding: 10px;
+  font-size: 14px;
+  text-align: right;
+}
+
+.userMenu .vs-button {
+  float: right;
+  margin-top: 10px;
+}
+
+.contactDetail {
+  float: left;
+  width: 100%;
+  padding: 50px 0;
+}
+
+.contactDetail .content-inputs {
+  float: left;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.contactDetail .msg {
+  padding: 10px;
+  border: 1px solid #f1f1f1;
+  outline: none;
+  width: 500px;
+}
+
+.contactDetail input {
+  width: 500px;
+}
+
+.contactDetail .dropdown {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.contactDetail .dropdown-input, .contactDetail .dropdown-selected {
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  background: #edf2f7;
+  line-height: 1.5em;
+  outline: none;
+  border-radius: 8px;
+}
+
+.contactDetail .dropdown-input:focus, .contactDetail .dropdown-selected:hover {
+  background: #fff;
+  border-color: #e2e8f0;
+}
+
+.contactDetail .dropdown-input::-webkit-input-placeholder {
+  opacity: 0.7;
+}
+
+.contactDetail .dropdown-input:-ms-input-placeholder {
+  opacity: 0.7;
+}
+
+.contactDetail .dropdown-input::-ms-input-placeholder {
+  opacity: 0.7;
+}
+
+.contactDetail .dropdown-input::placeholder {
+  opacity: 0.7;
+}
+
+.contactDetail .dropdown-selected {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contactDetail .dropdown-list {
+  position: absolute;
+  width: 100%;
+  max-height: 500px;
+  margin-top: 4px;
+  overflow-y: auto;
+  background: #ffffff;
+  -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+.contactDetail .dropdown-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 11px 16px;
+  cursor: pointer;
+}
+
+.contactDetail .dropdown-item:hover {
+  background: #edf2f7;
+}
+
+.contactDetail .dropdown-item-flag {
+  max-width: 24px;
+  max-height: 18px;
+  margin: auto 12px auto 0px;
+}
+
+.success {
+  float: left;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.mobileMenuBtn {
+  float: right;
+  color: #ffff;
+  padding-left: 15px;
+  font-size: 22px;
+  display: none;
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  width: 100%;
+  background-color: #11263d;
+  padding: 20px;
+}
+
+.mobileMenu li {
+  float: left;
+  width: 100%;
+}
+
+.mobileMenu li a {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: #fff !important;
+  background: transparent;
+}
+
+.mobileMenu li a.nuxt-link-exact-active {
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .vs-navbar__item {
+    display: none;
+  }
+  .mobileMenuBtn {
+    display: block;
+  }
+  .username .name {
+    display: none;
+  }
+  .userMenu {
+    top: 50px;
+  }
+}

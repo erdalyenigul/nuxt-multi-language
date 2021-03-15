@@ -1,0 +1,52 @@
+{
+  "language": {
+    "name": "Türkçe",
+    "selectLanguage": "Dil seç"
+  },
+  "links": {
+    "home": "Anasayfa",
+    "about": "Hakkımızda",
+    "contact": "İletişim"
+  },
+  "login": {
+    "login": "Giriş",
+    "logout": "Çıkış",
+    "sendBtn": "Gönder",
+    "signIn": "Lütfen giriş yapınız",
+    "loginBtn": "Giriş",
+    "username": "İsim",
+    "email": "E-Posta",
+    "password": "Şifre",
+    "phone": "Telefon"
+  },
+  "home": {
+    "title": "Anasayfa",
+    "description": "Ana sayfaya hoşgeldiniz."
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "description": "Bu hakkımızda sayfası size daha fazla bilgi vermek için yapılmıştır."
+  },
+  "contact": {
+    "title": "İletişim",
+    "description": "Bu formu doldurarak bize ulaşabilirsiniz.",
+    "selectCountry": "Ülke seçiniz",
+    "success": "Mesaj gönderildi.",
+    "findCountry": "Ülke arayın"
+  },
+  "error": {
+    "name": "İsim zorunlu alan.",
+    "email": "E-posta zorunlu alan.",
+    "phone": "Telefon zorunlu alan."
+  },
+  "countries": {
+    "tr": "Türkiye",
+    "us": "Amerika Birleşik Devletleri",
+    "gb": "Birleşik Krallık",
+    "de": "Almanya",
+    "se": "İsveç",
+    "ke": "Kenya",
+    "br": "Brezilya",
+    "zw": "Zimbabve"
+  }
+}

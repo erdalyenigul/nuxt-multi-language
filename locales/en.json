@@ -1,0 +1,52 @@
+{
+  "language": {
+    "name": "English",
+    "selectLanguage": "Select language"
+  },
+  "links": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "login": {
+    "login": "Login",
+    "logout": "Logout",
+    "sendBtn": "Send",
+    "signIn": "Please sign in",
+    "loginBtn": "Sign in",
+    "username": "Name",
+    "email": "E-mail",
+    "password": "Password",
+    "phone": "Phone"
+  },
+  "home": {
+    "title": "Home",
+    "description": "Welcome to main page."
+  },
+  "about": {
+    "title": "About",
+    "description": "This about page is made to give you more informations."
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "You can contact us by filling out this form.",
+    "selectCountry": "Select country",
+    "success": "Message sent.",
+    "findCountry": "Find country"
+  },
+  "error": {
+    "name": "Name is required",
+    "email": "E-mail is required",
+    "phone": "Phone is required"
+  },
+  "countries": {
+    "tr": "Turkey",
+    "us": "United States of America",
+    "gb": "United Kingdom",
+    "de": "Germany",
+    "se": "Sweden",
+    "ke": "Kenya",
+    "br": "Brazil",
+    "zw": "Zimbabwe"
+  }
+}
