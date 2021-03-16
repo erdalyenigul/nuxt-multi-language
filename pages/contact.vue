@@ -36,18 +36,20 @@
       <div class="success" v-if="!formVisible">
         {{ $t('contact.success') }}
       </div>
+      {{ getUser }}
     </div>
   </div>
 </template>
 
 <script>
+  
   export default {
     data() {
       return{
         formVisible: true,
+        phonenumber: null,
         name: '',
         email: '',
-        phonenumber: null,
         country_code: {},
         text: null,
         inputValue: '',
@@ -65,18 +67,20 @@
           { id: "BR", flag: "https://restcountries.eu/data/bra.svg", name: this.$i18n.t('countries.br'), },
           { id: "ZW", flag: "https://restcountries.eu/data/zwe.svg", name: this.$i18n.t('countries.zw'), }
         ]
+      },
+      getUser () {
+        this.name = this.$store.state.name;
+        this.email = this.$store.state.email;
       }
     },
     methods: {
       resetSelection () {
         this.country_code = {}
-        this.$nextTick( () => this.$refs.dropdowninput.focus() )
-        this.$emit('on-item-reset')
+        this.$nextTick( () => this.$refs.dropdowninput.focus() );
       },
       selectItem (theItem) {
         this.country_code = theItem 
-        this.inputValue = ''
-        this.$emit('on-item-selected', theItem)
+        this.inputValue = '';
       },
       itemVisible (item) {
         let currentName = item.name.toLowerCase()
@@ -95,9 +99,12 @@
         console.log(data);
       }
     },
-    mounted() {
-      if(localStorage.getItem('username') || localStorage.getItem('email')) {
-        this.name = localStorage.getItem('username');
+    mounted() { 
+      this.name = this.$store.state.name;
+      this.email = this.$store.state.email;
+      
+      if(localStorage.getItem('name') || localStorage.getItem('email')) {
+        this.name = localStorage.getItem('name');
         this.email = localStorage.getItem('email');
       }
     }

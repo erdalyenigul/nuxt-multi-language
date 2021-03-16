@@ -20,18 +20,19 @@
             {{ $t('login.login') }}
           </vs-button>
           <div @click="userMenuOpen()" class="username" v-if="user">
-            <font-awesome-icon icon="user-check" /> <div class="name">{{ username }}</div>
+            <font-awesome-icon icon="user-check" /> <div class="name">{{ name }}</div>
             <div class="userMenu" v-if="userMenu">
-              <span>{{ username }}</span>
+              <span>{{ name }}</span>
               <span>{{ email }}</span>
               <vs-button @click="logOut()">{{ $t('login.logout') }}</vs-button>
             </div>
           </div>
+
           <vs-dialog v-model="login" v-if="loginModalVisible">
             <template #header>{{ $t('login.signIn') }}</template>
             <form @submit.prevent="userLogin()">
               <div class="signIn">
-                <vs-input required type="text" v-model="username" :placeholder="$t('login.username')" />
+                <vs-input required type="text" v-model="name" :placeholder="$t('login.username')" />
                 <vs-input required type="email" v-model="email" :placeholder="$t('login.email')" />
                 <vs-input required type="password" v-model="password" :placeholder="$t('login.password')" />
               </div>
@@ -44,10 +45,12 @@
               </select>
             </div>
           </vs-dialog>
+
           <select class="selectLanguage" v-model="language" @change="setLang()">
             <option label="TR" value="tr">TR</option>
             <option label="EN" value="en">EN</option>
           </select>
+          
           <a @click="mobileMenuOpen()" class="mobileMenuBtn" href="javascript:;"><font-awesome-icon icon="bars" /></a>
           <ul class="mobileMenu" v-if="mobileMenuVisible">
             <li><nuxtLink @click.native="mobileMenuVisible = !mobileMenuVisible" to="/"><font-awesome-icon icon="angle-right" />  {{ $t('links.home') }}</nuxtLink></li>
@@ -69,7 +72,7 @@
         active: false,
         language: 'tr',
         login: false,
-        username: '',
+        name: '',
         email: '',
         password: '',
         user: false,
@@ -98,23 +101,27 @@
       userLogin() {
         this.user = true;
         this.loginModalVisible = false;
-        localStorage.setItem('username', this.username);
+
+        localStorage.setItem('name', this.name);
         localStorage.setItem('email', this.email);
+
+        this.$store.state.name = this.name;
+        this.$store.state.email = this.email;
       },
       logOut() {
         localStorage.clear();
         localStorage.setItem('lang', this.language);
         this.user = false;
         this.loginModalVisible = false;
-        this.username = '';
+        this.name = '';
         this.email = '';
         this.password = '';
       }
     },
     mounted() {
       this.pageHeadline = this.$t('links.home');
-      if(localStorage.getItem('username') || localStorage.getItem('email')) {
-        this.username = localStorage.getItem('username');
+      if(localStorage.getItem('name') || localStorage.getItem('email')) {
+        this.name = localStorage.getItem('name');
         this.email = localStorage.getItem('email');
         this.user = true;
       }
