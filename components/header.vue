@@ -105,8 +105,8 @@
         localStorage.setItem('name', this.name);
         localStorage.setItem('email', this.email);
 
-        this.$store.state.name = this.name;
-        this.$store.state.email = this.email;
+        this.$store.commit('setName', this.name);
+        this.$store.commit('setEmail', this.email);
       },
       logOut() {
         localStorage.clear();

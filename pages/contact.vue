@@ -5,10 +5,10 @@
     <div class="contactDetail">
       <form @submit.prevent="sendForm()" v-if="formVisible">
         <div class="content-inputs">
-          <vs-input required type="text" v-model="name" :placeholder="$t('login.username')" />
+          <vs-input dark :label="$t('login.username')" required type="text" v-model="stateName" :placeholder="$t('login.username')" />
         </div>
         <div class="content-inputs">
-          <vs-input dark :label="$t('login.email')" required type="email" v-model="email" :placeholder="$t('login.email')" />
+          <vs-input dark :label="$t('login.email')" required type="email" v-model="stateEmail" :placeholder="$t('login.email')" />
         </div>
         <div class="content-inputs">
           <vs-input dark :label="$t('login.phone')" required type="number" v-model="phonenumber" :placeholder="$t('login.phone')" />
@@ -36,7 +36,6 @@
       <div class="success" v-if="!formVisible">
         {{ $t('contact.success') }}
       </div>
-      {{ getUser }}
     </div>
   </div>
 </template>
@@ -68,9 +67,11 @@
           { id: "ZW", flag: "https://restcountries.eu/data/zwe.svg", name: this.$i18n.t('countries.zw'), }
         ]
       },
-      getUser () {
-        this.name = this.$store.state.name;
-        this.email = this.$store.state.email;
+      stateName() {
+        return this.name = this.$store.state.name || localStorage.name;
+      },
+      stateEmail() {
+        return this.email = this.$store.state.email || localStorage.email;
       }
     },
     methods: {
@@ -97,15 +98,6 @@
           "text": this.text
         }
         console.log(data);
-      }
-    },
-    mounted() { 
-      this.name = this.$store.state.name;
-      this.email = this.$store.state.email;
-      
-      if(localStorage.getItem('name') || localStorage.getItem('email')) {
-        this.name = localStorage.getItem('name');
-        this.email = localStorage.getItem('email');
       }
     }
   }
