@@ -4,10 +4,16 @@
     <div class="description">{{ $t('contact.description') }}</div>
     <div class="contactDetail">
       <form @submit.prevent="sendForm()" v-if="formVisible">
-        <div class="content-inputs">
+        <div class="content-inputs" v-if="!$store.state.name">
+          <vs-input dark :label="$t('login.username')" required type="text" v-model="name" :placeholder="$t('login.username')" />
+        </div>
+        <div class="content-inputs" v-if="!$store.state.email">
+          <vs-input dark :label="$t('login.email')" required type="email" v-model="email" :placeholder="$t('login.email')" />
+        </div>
+        <div class="content-inputs" v-if="$store.state.name">
           <vs-input dark :label="$t('login.username')" required type="text" v-model="stateName" :placeholder="$t('login.username')" />
         </div>
-        <div class="content-inputs">
+        <div class="content-inputs" v-if="$store.state.email">
           <vs-input dark :label="$t('login.email')" required type="email" v-model="stateEmail" :placeholder="$t('login.email')" />
         </div>
         <div class="content-inputs">
