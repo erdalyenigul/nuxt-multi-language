@@ -11,10 +11,19 @@ export const mutations = {
       state.locale = locale
     }
   },
-  setName: (state, name) => { 
-    state.name = name;
+  setName (state, name) {
+    state.name = name
   },
-  setEmail: (state, email) => { 
-    state.email = email;
+  setEmail (state, email) {
+    state.email = email
+  }
+}
+
+export const actions = {
+  setName ({ commit }, name) {
+    commit('setName', name)
+  },
+  setEmail ({commit}, email) {
+    commit('setEmail', email)
   }
 }

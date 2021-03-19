@@ -16,10 +16,10 @@
             <nuxtLink to="contact">{{ $t('links.contact') }}</nuxtLink>
           </vs-navbar-item>
           
-          <vs-button flat v-if="!user" @click="loginModal()">
+          <vs-button flat v-if="!ifUser" @click="loginModal()">
             {{ $t('login.login') }}
           </vs-button>
-          <div @click="userMenuOpen()" class="username" v-if="user">
+          <div @click="userMenuOpen()" class="username" v-if="ifUser">
             <font-awesome-icon icon="user-check" /> <div class="name">{{ name }}</div>
             <div class="userMenu" v-if="userMenu">
               <span>{{ name }}</span>
@@ -75,7 +75,7 @@
         name: '',
         email: '',
         password: '',
-        user: false,
+        ifUser: false,
         userMenu: false,
         loginModalVisible: false,
         mobileMenuVisible: false,
@@ -99,19 +99,21 @@
         this.loginModalVisible = true;
       },
       userLogin() {
-        this.user = true;
+        this.ifUser = true;
         this.loginModalVisible = false;
 
         localStorage.setItem('name', this.name);
         localStorage.setItem('email', this.email);
 
-        this.$store.commit('setName', this.name);
-        this.$store.commit('setEmail', this.email);
+        this.$store.dispatch('setName', this.name);
+        this.$store.dispatch('setEmail', this.email);
+
+        // this.$store.dispatch('setUser', this.user);
       },
       logOut() {
         localStorage.clear();
         localStorage.setItem('lang', this.language);
-        this.user = false;
+        this.ifUser = false;
         this.loginModalVisible = false;
         this.name = '';
         this.email = '';
@@ -120,13 +122,13 @@
     },
     mounted() {
       this.pageHeadline = this.$t('links.home');
-      if(localStorage.getItem('name') || localStorage.getItem('email')) {
-        this.name = localStorage.getItem('name');
-        this.email = localStorage.getItem('email');
-        this.user = true;
+      if(localStorage.name || localStorage.email) {
+        this.name = localStorage.name;
+        this.email = localStorage.email;
+        this.ifUser = true;
       }
-      if(localStorage.getItem('lang')){
-        this.currentLang = localStorage.getItem('lang');
+      if(localStorage.lang){
+        this.currentLang = localStorage.lang;
         this.$i18n.locale = this.currentLang;
         this.language = this.currentLang;
       }

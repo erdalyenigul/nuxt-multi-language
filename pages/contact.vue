@@ -4,17 +4,11 @@
     <div class="description">{{ $t('contact.description') }}</div>
     <div class="contactDetail">
       <form @submit.prevent="sendForm()" v-if="formVisible">
-        <div class="content-inputs" v-if="!$store.state.name">
+        <div class="content-inputs">
           <vs-input dark :label="$t('login.username')" required type="text" v-model="name" :placeholder="$t('login.username')" />
         </div>
-        <div class="content-inputs" v-if="!$store.state.email">
+        <div class="content-inputs">
           <vs-input dark :label="$t('login.email')" required type="email" v-model="email" :placeholder="$t('login.email')" />
-        </div>
-        <div class="content-inputs" v-if="$store.state.name">
-          <vs-input dark :label="$t('login.username')" required type="text" v-model="stateName" :placeholder="$t('login.username')" />
-        </div>
-        <div class="content-inputs" v-if="$store.state.email">
-          <vs-input dark :label="$t('login.email')" required type="email" v-model="stateEmail" :placeholder="$t('login.email')" />
         </div>
         <div class="content-inputs">
           <vs-input dark :label="$t('login.phone')" required type="number" v-model="phonenumber" :placeholder="$t('login.phone')" />
@@ -47,14 +41,12 @@
 </template>
 
 <script>
-  
+
   export default {
     data() {
       return{
         formVisible: true,
         phonenumber: null,
-        name: '',
-        email: '',
         country_code: {},
         text: null,
         inputValue: '',
@@ -73,11 +65,21 @@
           { id: "ZW", flag: "https://restcountries.eu/data/zwe.svg", name: this.$i18n.t('countries.zw'), }
         ]
       },
-      stateName() {
-        return this.name = this.$store.state.name || localStorage.name;
+      name: {
+        get () {
+          return this.$store.state.name
+        },
+        set (value) {
+          this.$store.dispatch('setName', value)
+        }
       },
-      stateEmail() {
-        return this.email = this.$store.state.email || localStorage.email;
+      email: {
+        get () {
+          return this.$store.state.email
+        },
+        set (value) {
+          this.$store.dispatch('setEmail', value);
+        }
       }
     },
     methods: {
@@ -104,6 +106,12 @@
           "text": this.text
         }
         console.log(data);
+      }
+    },
+    mounted() {
+      if(localStorage.name || localStorage.email) {
+        this.name = localStorage.name;
+        this.email = localStorage.email;
       }
     }
   }
