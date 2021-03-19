@@ -1,6 +1,10 @@
 # Nuxt-Multi-Language
 
-### Demo: https://tender-gates-6d4a3b.netlify.app
+VueJs + NuxtJs + Vuex + Vuesax
+Multi language ( i18n ) - TR, EN
+
+Demo: https://tender-gates-6d4a3b.netlify.app
+
 
 ## Build Setup
 
